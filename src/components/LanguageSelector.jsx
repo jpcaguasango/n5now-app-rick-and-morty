@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-// import { useTranslation } from "react-i18next";
-import i18n from "../language/i18n";
 import styled from "styled-components";
+import i18n from "../language/i18n";
+import { Colors } from "../helpers/enums/colors";
+
+const { BgGreen, Black } = Colors;
 
 const Button = styled.button`
   padding: 4px 8px;
   border: none;
   border-radius: 4px;
   background-color: ${({ lang, activeLang }) =>
-    lang === activeLang ? "#41b57f" : "#000"};
+    lang === activeLang ? BgGreen : "#000"};
+  font-weight: ${({ lang, activeLang }) => (lang === activeLang ? "bold" : "")};
   color: #fff;
   cursor: pointer;
   margin: 0px 4px;
-  font-weight: ${({ lang, activeLang }) => (lang === activeLang ? "bold" : "")};
 `;
 
 function LanguageSelector() {

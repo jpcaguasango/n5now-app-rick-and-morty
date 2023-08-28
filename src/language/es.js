@@ -1,5 +1,6 @@
 export default {
   translation: {
+    title: "Rick y Morty",
     consulting: "Consultando información...",
     emptyState: "No se encontraron datos en la busqueda...",
     search: "Buscar",

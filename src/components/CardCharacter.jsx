@@ -10,14 +10,14 @@ import { useTranslation } from "react-i18next";
 
 const { Male } = Genders;
 const { Alien } = Species;
-const { BgPink, Pink, BgBlue, Blue } = Colors;
+const { GreyLight, BgPink, Pink, BgBlue, Blue } = Colors;
 
 const CardContainer = styled.div`
   width: 220px;
   height: 340px;
   padding: 10px;
   margin: 6px auto;
-  border: 1px solid #383838;
+  border: 1px solid ${GreyLight};
   border-radius: 8px;
 `;
 
@@ -67,6 +67,8 @@ function CardCharacter({ name, img, gender, species }) {
   const bgGender = gender === Male ? BgBlue : BgPink;
   const colorGender = gender === Male ? Blue : Pink;
   const speciesIcon = species === Alien ? <FaReddit /> : <FaUserCircle />;
+  const speciesText = cleanSpaces(species.toLowerCase());
+  const genderText = gender.toLowerCase();
 
   return (
     <CardContainer id={name}>
@@ -74,9 +76,7 @@ function CardCharacter({ name, img, gender, species }) {
         <Image src={img} />
         <SpeciesIcon>
           {speciesIcon}
-          <Label
-            text={t(`character.species.${cleanSpaces(species.toLowerCase())}`)}
-          />
+          <Label text={t(`character.species.${speciesText}`)} />
         </SpeciesIcon>
       </ImageContainer>
       <HeaderContainer>
@@ -87,7 +87,7 @@ function CardCharacter({ name, img, gender, species }) {
         <div>
           <Label text={t("character.gender.label")} />
           <Tag
-            text={t(`character.gender.${gender.toLowerCase()}`)}
+            text={t(`character.gender.${genderText}`)}
             background={bgGender}
             color={colorGender}
           />

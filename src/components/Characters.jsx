@@ -49,11 +49,10 @@ function Characters() {
       });
     }
 
-    return [...characters];
+    return characters;
   }, [characters, search, currentPage]);
 
   const renderEmptyState = <EmptyState text={t("emptyState")} img={EmptyImg} />;
-
   const renderSpinner = isLoading && <Spinner text={t("consulting")} />;
 
   const renderCharacters = () => {
