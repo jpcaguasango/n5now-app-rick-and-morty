@@ -25,10 +25,10 @@ const EmptyStateText = styled.p`
 
 function EmptyState({ text, img }) {
   return (
-    <EmptyStateContainer>
-      <EmptyStateContent>
-        <EmptyStateImage src={img} />
-        <EmptyStateText>{text}</EmptyStateText>
+    <EmptyStateContainer data-testid="empty-state-container">
+      <EmptyStateContent data-testid="empty-state-content">
+        <EmptyStateImage data-testid="empty-state-image" src={img} />
+        <EmptyStateText data-testid="empty-state-text">{text}</EmptyStateText>
       </EmptyStateContent>
     </EmptyStateContainer>
   );
